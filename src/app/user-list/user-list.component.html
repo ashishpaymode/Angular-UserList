@@ -1,0 +1,35 @@
+<table class="table">
+    <tr>
+        <th>FullName</th>
+        <th>email</th>
+        <th>DOB</th>
+        <th>profession</th>
+        <th></th>
+    </tr>
+
+    <tr *ngFor="let u of users">
+        <td>{{u.firstName+" "+ u.lastName  | uppercase}}</td>
+        <td>{{u.email | lowercase}}</td>
+        <td>{{u.dateOfBirth | date:'dd-MMM-yyyy'}}</td>
+        <td>{{u.profession}}</td>
+        <td>
+            <button class="btn btn-primary" (click)="moreInfo(u)">
+                More Info
+            </button>
+        </td>
+        <td>
+            <button class="btn btn-sm btn-warning">
+                <i class="fa fa-edit"></i>
+                Edit
+            </button>
+            <button class="btn btn-sm btn-danger">
+                <i class="fa fa-remove"></i>
+                Delete
+            </button>
+        </td>
+    </tr>
+</table>
+
+<div *ngFor="let item of users">
+    <app-user-card [user]="item" (callMoreinfo)=moreInfo($event)></app-user-card>
+</div>

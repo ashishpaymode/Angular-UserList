@@ -1,0 +1,10 @@
+<div>
+    <h2>User Card</h2>
+    <p>{{user.id}}</p>
+    <p>{{user.firstName}} {{user.lastName}}</p>
+    <p>{{user.email}}</p>
+    <p>{{user.profession}}</p>
+    <p>{{user.dateOfBirth | date : "dd-MMM-yyyy"}}</p>
+
+    <button type="btn btn-primary" (click)="newEmitEvent()">Submit</button>
+</div>
